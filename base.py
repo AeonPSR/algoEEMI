@@ -26,7 +26,6 @@ def tablify(input):
     return(output)
 
 tab = tablify(pull("https://2e.aonprd.com/Classes.aspx"))
-print(tab)
 
 def addThreeMinusOne(tab):
     tab.append("One")
@@ -36,6 +35,24 @@ def addThreeMinusOne(tab):
 
     return(tab)
 
-print (addThreeMinusOne(tab))
+def longestName(tab):
+    longest = 0
+    iLongest = 0
+    i = 0
+    for elements in tab:
+        lengthWord = 0
+        for letters in elements:
+            lengthWord += 1
+        if (lengthWord > longest):
+            longest = lengthWord
+            iLongest = i
+#        print(tab[i])
+#        print(lengthWord)
+        i += 1
+    print("\n")
+    return (tab[iLongest])
 
-print(f"\n\nTime taken: {time.time() - start_time} seconds")
+print (tab)
+print (f"\n{longestName(tab)}")
+
+print(f"\nTime taken: {time.time() - start_time} seconds")
